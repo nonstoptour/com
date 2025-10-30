@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NO STOP TOUR - Ultimate Gaming Experience</title>
+    <link rel="icon" type="image/x-icon" href="mylogo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'electric': '#00ffff',
+                        'magenta': '#ff0080',
+                        'gold': '#ffd700',
+                        'deep-purple': '#4c1d95',
+                    },
+                    animation: {
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'zoom': 'zoom 2s ease-in-out infinite',
+                        'slide-in': 'slideIn 0.6s ease-out',
+                        'fade-up': 'fadeUp 0.8s ease-out',
+                        'rotate-slow': 'rotate 10s linear infinite',
+                        'bounce-x': 'bounceX 2s infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' }
+                        },
+                        zoom: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.1)' }
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        fadeUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        bounceX: {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '50%': { transform: 'translateX(10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 80%, #120a8f 0%, #000000 50%, #8b0000 100%);
+            min-height: 100vh;
+        }
+        
+        .fire-text {
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcc02);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 10px #ff6b35);
+        }
+        
+        .electric-border {
+            border: 3px solid;
+            border-image: linear-gradient(45deg, #00ffff, #ff0080, #00ffff) 1;
+            animation: borderGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes borderGlow {
+            0% { filter: drop-shadow(0 0 5px #00ffff); }
+            100% { filter: drop-shadow(0 0 20px #ff0080); }
+        }
+        
+        .hologram {
+            background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(255,0,128,0.1));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0,255,255,0.3);
+        }
+        
+        .cyber-btn {
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cyber-btn:hover::before {
+            left: 100%;
+        }
+        
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(5deg); }
+            66% { transform: translateY(5px) rotate(-5deg); }
+        }
+        
+        .pulse-ring {
+            animation: pulseRing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        
+        @keyframes pulseRing {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-white overflow-x-hidden">
+
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute top-10 left-10 w-2 h-2 bg-electric rounded-full animate-ping"></div>
+        <div class="absolute top-32 right-20 w-3 h-3 bg-magenta rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 left-1/4 w-2 h-2 bg-gold rounded-full animate-bounce"></div>
+        <div class="absolute top-1/2 right-10 w-4 h-4 bg-electric rounded-full animate-spin"></div>
+        <div class="absolute bottom-32 right-1/3 w-2 h-2 bg-magenta rounded-full animate-ping"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 p-6 animate-slide-in">
+        <div class="text-center">
+            <div class="inline-flex items-center space-x-3 hologram rounded-full px-6 py-3">
+                <div class="relative">
+                    <div class="w-10 h-10 bg-gradient-to-r from-electric to-magenta rounded-full flex items-center justify-center floating-icon">
+                        ⚡
+                    </div>
+                    <div class="absolute inset-0 w-10 h-10 bg-electric rounded-full pulse-ring"></div>
+                </div>
+                <h1 class="text-2xl font-black fire-text">NO STOP TOUR</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="px-6 py-12 text-center animate-fade-up">
+        <div class="max-w-md mx-auto">
+            <h2 class="text-5xl font-black mb-6 animate-zoom">
+                <span class="fire-text">গেমিং</span>
+                <br>
+                <span class="text-electric">রেভোলিউশন</span>
+            </h2>
+            
+            <p class="text-xl text-gray-300 mb-8 animate-fade-up" style="animation-delay: 0.3s;">
+                🔥 বাংলাদেশের সবচেয়ে হট গেমিং অ্যাপ 🔥
+            </p>
+
+            <!-- Main App Icon -->
+            <div class="relative mb-8 animate-fade-up" style="animation-delay: 0.6s;">
+                <div class="w-40 h-40 mx-auto hologram rounded-3xl electric-border flex items-center justify-center text-8xl animate-wiggle">
+                    🎯
+                </div>
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-gold to-magenta rounded-full flex items-center justify-center text-2xl animate-bounce">
+                    🏆
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Cards -->
+    <section class="px-6 py-8">
+        <div class="max-w-sm mx-auto space-y-6">
+            
+            <div class="hologram rounded-2xl p-6 electric-border animate-fade-up" style="animation-delay: 0.2s;">
+                <div class="flex items-center space-x-4">
+                    <div class="text-5xl animate-bounce-x">💎</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-electric">প্রিমিয়াম রিওয়ার্ড</h3>
+                        <p class="text-gray-300">দৈনিক ১০,০০০ টাকা পর্যন্ত জিতুন</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hologram rounded-2xl p-6 electric-border animate-fade-up" style="animation-delay: 0.4s;">
+                <div class="flex items-center space-x-4">
+                    <div class="text-5xl animate-bounce-x">⚡</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-magenta">ইনস্ট্যান্ট পেআউট</h3>
+                        <p class="text-gray-300">৫ মিনিটেই বিকাশে টাকা</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hologram rounded-2xl p-6 electric-border animate-fade-up" style="animation-delay: 0.6s;">
+                <div class="flex items-center space-x-4">
+                    <div class="text-5xl animate-bounce-x">🚀</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gold">সুপার ফাস্ট</h3>
+                        <p class="text-gray-300">ল্যাগ ফ্রি গেমিং এক্সপেরিয়েন্স</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="px-6 py-8">
+        <div class="hologram rounded-3xl p-8 max-w-sm mx-auto animate-fade-up" style="animation-delay: 0.8s;">
+            <h3 class="text-2xl font-bold text-center mb-6 fire-text">🔥 লাইভ স্ট্যাটস 🔥</h3>
+            <div class="grid grid-cols-2 gap-6 text-center">
+                <div>
+                    <div class="text-4xl font-black text-electric mb-2 animate-zoom">18K+</div>
+                    <div class="text-gray-300">অ্যাক্টিভ প্লেয়ার</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black text-magenta mb-2 animate-zoom">৫০L+</div>
+                    <div class="text-gray-300">পেইড আউট</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black text-gold mb-2 animate-zoom">24/7</div>
+                    <div class="text-gray-300">সাপোর্ট</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black text-electric mb-2 animate-zoom">100%</div>
+                    <div class="text-gray-300">সিকিউর</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="px-6 py-12">
+        <div class="max-w-sm mx-auto text-center animate-fade-up" style="animation-delay: 1s;">
+            
+            <h3 class="text-3xl font-black mb-4 fire-text animate-wiggle">
+                🎮 এখনই ডাউনলোড করুন 🎮
+            </h3>
+            
+            <p class="text-gray-300 mb-8">
+                ফ্রি ডাউনলোড করুন এবং ১০০ টাকা বোনাস পান!
+            </p>
+
+            <!-- Download Button -->
+            <a href="NO STOP TOUR.apk" class="block mb-6">
+                <button class="cyber-btn w-full py-6 px-8 rounded-2xl text-2xl font-black text-white transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center justify-center space-x-3">
+                        <span class="text-3xl animate-bounce">📲</span>
+                        <span>ডাউনলোড</span>
+                        <span class="text-3xl animate-bounce">🎯</span>
+                    </div>
+                </button>
+            </a>
+
+            <!-- App Details -->
+            <div class="hologram rounded-xl p-4 text-sm">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center">
+                        <div class="text-electric font-bold">Apps Size</div>
+                        <div class="text-gray-300">17 MB</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-magenta font-bold">Version</div>
+                        <div class="text-gray-300">1.0</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-gold font-bold">রেটিং</div>
+                        <div class="text-gray-300">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-electric font-bold">ডাউনলোড</div>
+                        <div class="text-gray-300">20K+</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="px-6 py-8">
+        <h3 class="text-2xl font-bold text-center mb-6 fire-text">🌟 প্লেয়ার রিভিউ 🌟</h3>
+        <div class="max-w-sm mx-auto space-y-4">
+            
+            <div class="hologram rounded-xl p-4 animate-fade-up">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-electric to-magenta rounded-full flex items-center justify-center mr-3 text-xl">
+                        😎
+                    </div>
+                    <div>
+                        <div class="font-bold text-electric">আরিফ ভাই</div>
+                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="text-gray-300">"মাত্র ১ সপ্তাহে ৫০০০ টাকা জিতেছি! 🔥"</p>
+            </div>
+
+            <div class="hologram rounded-xl p-4 animate-fade-up" style="animation-delay: 0.2s;">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-magenta to-gold rounded-full flex items-center justify-center mr-3 text-xl">
+                        🤩
+                    </div>
+                    <div>
+                        <div class="font-bold text-magenta">সাকিব গেমার</div>
+                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="text-gray-300">"বেস্ট গেমিং অ্যাপ! পেমেন্ট ১০০% গ্যারান্টি 💎"</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 py-8 text-center">
+        <div class="hologram rounded-2xl p-6 max-w-sm mx-auto animate-fade-up" style="animation-delay: 1.2s;">
+            <div class="flex items-center justify-center mb-4">
+                <div class="w-8 h-8 bg-gradient-to-r from-electric to-magenta rounded-full flex items-center justify-center mr-2 animate-rotate-slow">
+                    ⚡
+                </div>
+                <span class="font-black fire-text">NO STOP TOUR</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-2">© 2025 সর্বস্বত্ব সংরক্ষিত</p>
+            <p class="text-gray-500 text-xs">
+                Developer By 
+                <a href="https://t.me/MR_PROMOTER71" class="text-electric hover:text-magenta transition-colors" target="_blank">
+                    Murad 🚀
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Random floating elements
+        function createFloatingElement() {
+            const symbols = ['💎', '⚡', '🔥', '🎯', '🏆', '💰'];
+            const element = document.createElement('div');
+            element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            element.className = 'fixed text-2xl pointer-events-none animate-ping';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = Math.random() * window.innerHeight + 'px';
+            element.style.zIndex = '5';
+            
+            document.body.appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 3000);
+        }
+
+        // Create floating elements periodically
+        setInterval(createFloatingElement, 4000);
+
+        // Add click effects
+        document.addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            ripple.className = 'fixed w-4 h-4 bg-electric rounded-full pointer-events-none animate-ping';
+            ripple.style.left = e.clientX - 8 + 'px';
+            ripple.style.top = e.clientY - 8 + 'px';
+            ripple.style.zIndex = '50';
+            
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 1000);
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Download button special effect
+        document.querySelector('.cyber-btn').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.05)';
+            }, 150);
+        });
+    </script>
+
+</body>
+</html>
